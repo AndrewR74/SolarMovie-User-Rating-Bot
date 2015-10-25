@@ -106,4 +106,24 @@ $(function() {
 		}
 	});
 	
+	chrome.runtime.onMessage.addListener(
+		function(request, sender, sendResponse) {
+			if (request.method == "BOT_INTERNAL_MEMORY") 
+			{
+				var sendResponseAsync = sendResponse;
+				chrome.storage.local.get(function(data) {
+					sendResponseAsync({responseCode: 1, Properties: data });
+				});
+
+				return true;
+			} 
+			else if (request.method == "BOT_INTERNAL_MEMORY_SAVE") 
+			{
+				chrome.storage.local.set(request.data, function() { });
+				
+				sendResponse();
+			} 
+		}
+	);
+	
 });

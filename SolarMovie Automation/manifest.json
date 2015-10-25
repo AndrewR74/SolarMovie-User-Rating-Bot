@@ -14,6 +14,7 @@
       "js": ["jquery.min.js", "solarautomation.js", "uri.js"]
     }
   ],
+  "options_page": "options_page.html",
   "background": {
     "scripts": ["jquery.min.js", "uri.js", "background.js"]
   }
