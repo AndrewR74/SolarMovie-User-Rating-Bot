@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+
+  "name": "SolarMovie Automatiom",
+  "description": "Gives rep for watching movies automatically.",
+  "version": "1.5",
+
+  "permissions": [
+    "https://*.solarmovie.is/*", "http://*.solarmovie.is/*", "tabs", "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://*.solarmovie.is/*", "http://*.solarmovie.is/*"],
+      "js": ["jquery.min.js", "solarautomation.js", "uri.js"]
+    }
+  ],
+  "background": {
+    "scripts": ["jquery.min.js", "uri.js", "background.js"]
+  }
+}
